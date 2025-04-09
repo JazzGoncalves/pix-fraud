@@ -46,14 +46,14 @@ git clone https://github.com/JazzGoncalves/pix-fraud-detection.git
 
 cd pix-fraud-detection
 
-3. Rodar com Docker
+2. Rodar com Docker
 docker build -t pix-fraud-app .
 
 docker run -p 8501:8501 pix-fraud-app
 
 Acesse http://localhost:8501 no navegador
 
-5. Rodar localmente (sem Docker)
+3. Rodar localmente (sem Docker)
    
 poetry install
 
