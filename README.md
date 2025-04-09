@@ -1,57 +1,54 @@
-pix-fraud-detection
-==============================
+Pix Fraud Detection
 
-modelo de deteccao de fraude utilizando xgboost
+O projeto tem como objetivo detectar fraudes em transações via Pix utilizando modelo de machine learning. A solução foi desenvolvida com foco em escalabilidade e interpretabilidade, integrando modelagem, API interativa com Streamlit, e ambiente containerizado com Docker.
 
-Project Organization
-------------
+Objetivo
+Desenvolver um modelo preditivo de classificação binária para identificar possíveis fraudes em transações Pix, utilizando dados com características como scores, valor da transação, horário, regiões do Brasil.
 
-    ├── LICENSE
-    ├── Makefile           <- Makefile with commands like `make data` or `make train`
-    ├── README.md          <- The top-level README for developers using this project.
-    ├── data
-    │   ├── external       <- Data from third party sources.
-    │   ├── interim        <- Intermediate data that has been transformed.
-    │   ├── processed      <- The final, canonical data sets for modeling.
-    │   └── raw            <- The original, immutable data dump.
-    │
-    ├── docs               <- A default Sphinx project; see sphinx-doc.org for details
-    │
-    ├── models             <- Trained and serialized models, model predictions, or model summaries
-    │
-    ├── notebooks          <- Jupyter notebooks. Naming convention is a number (for ordering),
-    │                         the creator's initials, and a short `-` delimited description, e.g.
-    │                         `1.0-jqp-initial-data-exploration`.
-    │
-    ├── references         <- Data dictionaries, manuals, and all other explanatory materials.
-    │
-    ├── reports            <- Generated analysis as HTML, PDF, LaTeX, etc.
-    │   └── figures        <- Generated graphics and figures to be used in reporting
-    │
-    ├── requirements.txt   <- The requirements file for reproducing the analysis environment, e.g.
-    │                         generated with `pip freeze > requirements.txt`
-    │
-    ├── setup.py           <- makes project pip installable (pip install -e .) so src can be imported
-    ├── src                <- Source code for use in this project.
-    │   ├── __init__.py    <- Makes src a Python module
-    │   │
-    │   ├── data           <- Scripts to download or generate data
-    │   │   └── make_dataset.py
-    │   │
-    │   ├── features       <- Scripts to turn raw data into features for modeling
-    │   │   └── build_features.py
-    │   │
-    │   ├── models         <- Scripts to train models and then use trained models to make
-    │   │   │                 predictions
-    │   │   ├── predict_model.py
-    │   │   └── train_model.py
-    │   │
-    │   └── visualization  <- Scripts to create exploratory and results oriented visualizations
-    │       └── visualize.py
-    │
-    └── tox.ini            <- tox file with settings for running tox; see tox.readthedocs.io
+Tecnologias Utilizadas
+- Python 3.11
+- Streamlit
+- Scikit-learn
+- XGBoost
+- Poetry (gerenciamento de dependências)
+- Docker
+- Pandas, Joblib e outras.
+
+Estrutura do Projeto
+
+pix-fraud-detection/
+├── app/                  # Aplicação Streamlit
+├── data/                 # Dados brutos ou processados
+├── modelos/              # Modelo treinado (.joblib, .pkl)
+├── notebooks/            # Notebooks de EDA e exploração
+├── src/                  # Scripts principais do pipeline
+│   ├── data_prep.py      # Pré-processamento de dados
+│   ├── features.py       # Engenharia de features
+│   ├── predict.py        # Lógica de predição
+│   └── train.py          # Treinamento do modelo
+├── tests/                # Teste unitário e de integração
+├── .env                  # Variáveis de ambiente (não versionado)
+├── .gitignore
+├── Dockerfile            # Docker para deploy da aplicação
+├── LICENSE               # Licença do projeto
+├── Makefile              # Comandos automáticos
+├── poetry.lock           # Lockfile do Poetry
+├── pyproject.toml        # Dependências e configurações com Poetry
+├── README.md             # Documentação do projeto
+├── requirements.txt      # Lista alternativa de dependências (auto-gerado)
+├── run_check.py          # Execução de testes do pipeline
 
 
---------
+Como Executar o Projeto
+1. Clonar o repositório
+git clone https://github.com/seu-usuario/pix-fraud-detection.git
+cd pix-fraud-detection
 
-<p><small>Project based on the <a target="_blank" href="https://drivendata.github.io/cookiecutter-data-science/">cookiecutter data science project template</a>. #cookiecutterdatascience</small></p>
+2. Rodar com Docker
+docker build -t pix-fraud-app .
+docker run -p 8501:8501 pix-fraud-app
+Acesse http://localhost:8501 no navegador.
+
+3. Rodar localmente (sem Docker)
+poetry install
+poetry run streamlit run app/app.py
