@@ -19,25 +19,25 @@ Estrutura do Projeto
 pix-fraud-detection/
 ├── app/                  # Aplicação Streamlit
 ├── data/                 # Dados brutos ou processados
-├── modelos/              # Modelo treinado (.joblib, .pkl)
+├── modelos/              # Modelos treinados (.joblib, .pkl)
 ├── notebooks/            # Notebooks de EDA e exploração
 ├── src/                  # Scripts principais do pipeline
 │   ├── data_prep.py      # Pré-processamento de dados
-│   ├── features.py       # Engenharia de features
+│   ├── features.py       # Engenharia de variáveis
 │   ├── predict.py        # Lógica de predição
 │   └── train.py          # Treinamento do modelo
-├── tests/                # Teste unitário e de integração
+├── tests/                # Testes unitários e de integração
 ├── .env                  # Variáveis de ambiente (não versionado)
 ├── .gitignore
 ├── Dockerfile            # Docker para deploy da aplicação
 ├── LICENSE               # Licença do projeto
+├── main.py               # Script principal opcional
 ├── Makefile              # Comandos automáticos
 ├── poetry.lock           # Lockfile do Poetry
 ├── pyproject.toml        # Dependências e configurações com Poetry
 ├── README.md             # Documentação do projeto
 ├── requirements.txt      # Lista alternativa de dependências (auto-gerado)
-├── run_check.py          # Execução de testes do pipeline
-
+├── run_check.py          # Execução de testes da pipeline
 
 Como Executar o Projeto
 1. Clonar o repositório
