@@ -1,0 +1,31 @@
+[project]
+name = "pix-fraud-detection"
+version = "1.0"
+description = "modelo de classificacao de transacoes pix"
+authors = [
+    {name = "Jazz Silva"}
+]
+package-mode = false
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+pandas = "^2.2.3"
+numpy = "^2.2.4"
+xgboost = "^3.0.0"
+scikit-learn = "^1.6.1"
+streamlit = "^1.44.1"
+joblib = "^1.4.2"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.3.5"
+black = "^25.1.0"
+isort = "^6.0.1"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
