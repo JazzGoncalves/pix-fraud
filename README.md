@@ -48,9 +48,13 @@ cd pix-fraud-detection
 
 3. Rodar com Docker
 docker build -t pix-fraud-app .
-docker run -p 8501:8501 pix-fraud-app
-Acesse http://localhost:8501 no navegador.
 
-4. Rodar localmente (sem Docker)
+docker run -p 8501:8501 pix-fraud-app
+
+Acesse http://localhost:8501 no navegador
+
+5. Rodar localmente (sem Docker)
+   
 poetry install
+
 poetry run streamlit run app/app.py
